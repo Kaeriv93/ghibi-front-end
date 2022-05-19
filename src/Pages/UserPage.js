@@ -10,13 +10,13 @@ const UserPage = (props) =>{
  
     const[editForm, setEditForm] = useState(user)
     const [fav, setFav] = useState({
-        favorites:[{addFilm:'Spirited Away'}],
+        favorites:[{addFilm:'Howl`s Moving Castle'}],
         newfavorites:{addFilm:''}
     })
 
     const mapfilm = fav.favorites.map((film,idx)=>(
         <div key={idx}>
-            <h4>{film.addFilm}</h4>
+            <h5>{film.addFilm}</h5>
         </div>
     ))
 
@@ -37,6 +37,7 @@ const UserPage = (props) =>{
             favorites:[...fav.favorites, fav.newfavorites],
             newfavorites:{addFilm:'New favorite'}
         })
+        props.updatedUser(fav, id)
     }
 
     const handleChange = event =>{
@@ -97,7 +98,8 @@ const UserPage = (props) =>{
             </div>
 
             <div className="reviews">
-                <h3>Reviews:{user.reviews}</h3>
+                <h3>Reviews:</h3>
+                <h4>{user.reviews}</h4>
             </div>
 
             <div className="friends">
@@ -105,7 +107,7 @@ const UserPage = (props) =>{
                 <h4>Tom</h4>
                 <img src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" alt="tom"/>
             </div>
-            <form onSubmit={addForm} className="editform">
+            <form onSubmit={handleSubmit} className="editform">
                 <input onChange={handleChange} type="text" name="bio" placeholder="Edit About Me" value={editForm.bio}/>
             </form>
             <div className="delete">
