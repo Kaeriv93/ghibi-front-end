@@ -7,13 +7,37 @@ const UserPage = (props) =>{
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id === id)
-    let favoriteFilm = users.favorites
-
+ 
     const[editForm, setEditForm] = useState(user)
     const [fav, setFav] = useState({
-        favorites:[{favoriteFilm}],
-        newfavorites:[{}]
+        favorites:[{addFilm:'Spirited Away'}],
+        newfavorites:{addFilm:''}
     })
+
+    const mapfilm = fav.favorites.map((film,idx)=>(
+        <div key={idx}>
+            <h4>{film.addFilm}</h4>
+        </div>
+    ))
+
+    const handleFilm = event=>{
+        setFav((prev)=>({
+            ...prev,
+            newfavorites:{
+                ...prev.newfavorites,
+                [event.target.name]:event.target.value
+            }
+        }))
+    }
+
+
+    const submitFilm = event =>{
+        event.preventDefault()
+        setFav({
+            favorites:[...fav.favorites, fav.newfavorites],
+            newfavorites:{addFilm:'New favorite'}
+        })
+    }
 
     const handleChange = event =>{
         setEditForm({...editForm, [event.target.name]:event.target.value})
@@ -31,7 +55,7 @@ const UserPage = (props) =>{
     }
 
     const addForm =()=>{
-        props.addForm(editForm,id)
+        props.addForm(fav,id)
         navigate(`/userpage/${id}`)
     }
 
@@ -66,8 +90,9 @@ const UserPage = (props) =>{
             <div className="favorites">
                 <h3>Favorites List</h3>
                 <h5>{user.favorites}</h5>
-                <form onSubmit={handleSubmit}>
-                    <input type ='text' name="favorites" placeholder="Add a favorite" onChange={handleChange} value={editForm.favorites}/>
+                    {mapfilm}
+                <form onSubmit={submitFilm}>
+                    <input type ='text' name="addFilm" placeholder="Add a favorite" onChange={handleFilm} value={fav.newfavorites.addFilm}/>
                 </form>
             </div>
 
