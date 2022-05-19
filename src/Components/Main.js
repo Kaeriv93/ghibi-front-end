@@ -10,6 +10,7 @@ import UserPage from '../Pages/UserPage';
 function Main(props){
     const [film, setFilm] = useState(null);
     const [user ,setUser] =useState(null);
+    const [updateUser,setUpdateUser] = useState(null)
     const [review,setReview] = useState({
         reviews:[{review:'Wow I really loved this film a lot!'}]
     })
@@ -17,6 +18,21 @@ function Main(props){
 
 
     const URL = "https://ghibliapi.herokuapp.com/films";
+
+    const URL2 = 'https://backend-studioghibli-app.herokuapp.com/users/'
+
+
+    const reviewData = () =>{
+        fetch('https://backend-studioghibli-app.herokuapp.com/reviews/')
+        .then(response => response.json())
+        .then(result => setReview(result))
+    }
+
+    const getUsers = () => {
+        fetch(URL2)
+        .then(response => response.json())
+        .then(result => setUpdateUser(result))
+    }
 
     useEffect(() => {
         const getData = async () => {
@@ -27,11 +43,6 @@ function Main(props){
         getData();
     }, []);
 
-   const reviewData = () =>{
-       fetch('https://backend-studioghibli-app.herokuapp.com/reviews/')
-       .then(response => response.json())
-       .then(result => setReview(result))
-   }
 
     const createReview = async(review) =>{
         await fetch ('https://backend-studioghibli-app.herokuapp.com/reviews/',{
@@ -51,6 +62,7 @@ function Main(props){
     }
 
     useEffect(() => reviewData(),[])
+    useEffect(() => getUsers(),[])
 
     useEffect(() => {
         const getUser = async () => {
@@ -61,6 +73,16 @@ function Main(props){
         getUser();
     }, []);
 
+    const updatedUser = async (user, id) => {
+        await fetch(URL2 + id, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+        getUsers()
+    }
 
 
     return(
@@ -74,7 +96,7 @@ function Main(props){
                 <Route exact path='/login' element={<Login />}/>
                 <Route path='/signup' element={<Signup/>}/>
                 <Route path='/success' element={<Success/>}/>
-                <Route path ='/userpage/:id' element={<UserPage user={user}/>}/>
+                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser} updateUser={updateUser}/>}/>
             </Routes>
         </main>
 

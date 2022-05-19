@@ -6,7 +6,8 @@
     'sidebar space title'
     'sidebar midspace body'
     'sidebar hobbies favorites'
-    'sidebar friends friends'
+    'sidebar edit friends'
+    
     ;
     text-align: center;
     line-height: 2;
@@ -44,4 +45,8 @@
 
 .friends{
     grid-area: friends;
+}
+
+.editform{
+    grid-area: edit;
 }
