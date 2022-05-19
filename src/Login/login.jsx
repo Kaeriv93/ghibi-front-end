@@ -37,7 +37,7 @@ const Login = ()=>{
                     if(email) generateError(email)
                     else if(password) generateError(password)
                 }else{
-                    navigate(`/userpage/1`)
+                    navigate(`/success`)
                 }
             }
 
