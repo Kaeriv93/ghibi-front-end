@@ -1,0 +1,89 @@
+body{
+  background-color: #558B6E;
+}
+.searchButton{
+  background-color: #8FBC94 ;
+  height:30px;
+  color: white;
+  }
+  .searchbarFlex{
+  display: flex ;
+  justify-content: center;
+  padding-bottom: 100px;
+  }
+
+  .searchBar{
+      width: 380px;
+      height: 20px;
+      background-color: #8FBC94;
+      border: #6EB49D;
+      color: white;
+      font-size: 20px;
+      font-family: 'Patrick Hand', cursive;
+
+  }
+
+  .navbar{
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 20px;
+   background-color: #61a09a;
+   border:#47807a solid 11px
+  }
+  
+  .navbar a{
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: 700;
+  }
+  .navbar a:hover{
+    background-color:#7cc46c;
+  }
+  .dustbabies{
+    top: 2vh;
+    transform: scaleX(-1);
+    width:50px;
+    height:50px;
+    position: absolute;
+    animation:linear infinite;
+    animation-name:run;
+    animation-duration:60s;
+    
+    
+  
+  }
+  @keyframes run  {
+   0% {
+      left:0;
+      -webkit-transform:rotateY(180deg);
+   }
+   
+   50% {
+      left:96%;
+      -webkit-transform:rotateY(180deg);
+   }
+   
+   51% {
+     
+      -webkit-transform:rotateY(0deg);
+   }
+   
+   99% {
+      left:0;
+      -webkit-transform:rotateY(0deg);
+   }
+   
+   100% {
+      left:0;
+      -webkit-transform:rotateY(0deg);
+   }
+ }
+
+
+  #logout{
+    float: right;
+  }
+
+

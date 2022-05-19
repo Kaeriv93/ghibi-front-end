@@ -1,0 +1,46 @@
+.grid-container{
+  display: flex;
+  justify-content: center;
+  background-color: #558B6E;
+}
+
+.sign-container{
+    background-color: white;
+    line-height: 2;
+    margin: 50px;
+    width: 800px;
+}
+.sign{
+    text-align: center;
+}
+
+.signup{
+  color: black;
+}
+
+.successful{
+  color: white;
+  text-align: center;
+}
+
+
+#signing{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    height: 35px;
+    width: 75px;
+    margin-left: 48%;
+  }
+
+  input[type=submit]:hover {
+    background-color: lightgreen;
+  }
