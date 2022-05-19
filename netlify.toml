@@ -1,3 +1,4 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
+  /api/*  https://backend-studioghibli-app.herokuapp.com/:splat  200
