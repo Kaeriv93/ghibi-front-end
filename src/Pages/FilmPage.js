@@ -21,10 +21,6 @@ const FilmPage = (props)=>{
             content:''
         })
     }
-    // const removeReview = () =>{
-    //     props.deleteReview(id)
-    //     console.log(props.deleteReview)
-    // }
 
     return 1 > 0? (
         <div className="showpage">

@@ -6,11 +6,16 @@
     'sidebar space title'
     'sidebar midspace body'
     'sidebar hobbies favorites'
-    'sidebar friends friends'
+    'sidebar edit friends'
+    
     ;
     text-align: center;
     line-height: 2;
     background-color: white;
+}
+
+.delete{
+    grid-area: sidebar;
 }
 
 .userpic{
@@ -44,4 +49,8 @@
 
 .friends{
     grid-area: friends;
+}
+
+.editform{
+    grid-area: edit;
 }

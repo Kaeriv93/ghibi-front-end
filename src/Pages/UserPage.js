@@ -1,10 +1,29 @@
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {useState} from 'react'
 import './User.css'
 
 const UserPage = (props) =>{
+    const navigate = useNavigate()
     let {id} = useParams()
-    let user = props.user[id]
+    let users = props.user
+    let user = users.find(u => u._id === id)
+
+    const[editForm, setEditForm] = useState(user)
+
+    const handleChange = event =>{
+        setEditForm({...editForm, [event.target.name]:event.target.value})
+    }
+    
+    const handleSubmit = event =>{
+        event.preventDefault()
+        props.updatedUser(editForm, id)
+        navigate(`/userpage/${id}`)
+    }
+
+    const deleteAccount = ()=>{
+        props.deleteUser(id)
+        navigate('/')
+    }
 
     return(
         <>
@@ -44,6 +63,12 @@ const UserPage = (props) =>{
                 <h3>Friends List</h3>
                 <h4>Tom</h4>
                 <img src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" alt="tom"/>
+            </div>
+            <form onSubmit={handleSubmit} className="editform">
+                <input onChange={handleChange} type="text" name="bio" placeholder="Edit About Me" value={editForm.bio}/>
+            </form>
+            <div className="delete">
+                <button onClick={deleteAccount}>Delete Account</button>
             </div>
         </div>
         </>
