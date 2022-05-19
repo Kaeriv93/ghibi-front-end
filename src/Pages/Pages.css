@@ -1,0 +1,84 @@
+.backdrop{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    
+}
+
+.moviebanner{
+    grid-area:main;
+    display: flex;
+}
+
+.title{
+    position: relative;
+    background-color: #EEDA9E;
+    bottom:30vh;
+    height: 10vh;
+    font-size: 3rem;
+    grid-area: image;
+    right:4vh;
+    color: white;
+    
+
+}
+
+.detail-description li{
+    list-style: none;
+    display: inline;
+    padding: 10px 15px;
+}
+
+.middle-container{
+    background-color: white;
+    color: black;
+}
+
+.description-grid{
+    display: grid;
+    grid-template-columns: .5fr 4fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    'image space space'
+    'image body body'
+    'image details rating'
+    ;
+    margin: 50px;
+}
+
+.director{
+    grid-area: space;
+    padding-left: 50px;
+}
+
+.film-image{
+    grid-area:image;
+    height: 600px;
+    width: 400px;
+   
+}
+
+.film-description{
+    grid-area: body;
+    padding-left: 50px;
+}
+
+.detail-description{
+    grid-area: details;
+    padding-left: 50px;
+}
+
+.rating{
+    grid-area: rating;
+    
+}
+
+.review{
+    text-align: center;
+    color: white;
+}
+
+#reviewsubmit{
+    position: relative;
+    right:25%;
+}

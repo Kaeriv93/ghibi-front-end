@@ -1,0 +1,47 @@
+.profile{
+    display: grid;
+    grid-template-columns:.5fr 3fr 4fr;
+    grid-template-rows: 1fr 2fr ;
+    grid-template-areas: 
+    'sidebar space title'
+    'sidebar midspace body'
+    'sidebar hobbies favorites'
+    'sidebar friends friends'
+    ;
+    text-align: center;
+    line-height: 2;
+    background-color: white;
+}
+
+.userpic{
+    grid-area: space;
+}
+
+.profile img{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.user-title{
+    grid-area:title;
+}
+
+.bio{
+    grid-area:midspace;
+}
+
+.hobbies{
+    grid-area: hobbies;
+}
+
+.favorites{
+    grid-area: favorites;
+}
+
+.reviews{
+    grid-area:body;
+}
+
+.friends{
+    grid-area: friends;
+}
