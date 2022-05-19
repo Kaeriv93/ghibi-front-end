@@ -4,6 +4,8 @@ import FilmPage from "../Pages/FilmPage";
 import Login from '../Login/login'
 import Signup from '../Signup/signup'
 import List from './Home'
+
+
 import Success from '../Signup/success';
 import UserPage from '../Pages/UserPage';
 
@@ -78,6 +80,7 @@ function Main(props){
         await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
             method: "delete",
             })
+
         getUsers()
     }
 
