@@ -9,7 +9,7 @@ import UserPage from '../Pages/UserPage';
 
 function Main(props){
     const [film, setFilm] = useState(null);
-    const [user ,setUser] =useState(null);
+    const [user ,setUser] = useState(null);
     const [review,setReview] = useState({
         reviews:[{review:'Wow I really loved this film a lot!'}]
     })
@@ -64,13 +64,22 @@ function Main(props){
     useEffect(() => getUsers(),[])
 
     const updatedUser = async (user, id) => {
-        await fetch(URL2 + id, {
+        await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(user),
         })
+        getUsers()
+    }
+
+    const deleteUser = async id => {
+        // make delete request to create people
+        await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
+            method: "delete",
+            })
+        // update list of people
         getUsers()
     }
 
@@ -86,7 +95,7 @@ function Main(props){
                 <Route exact path='/login' element={<Login />}/>
                 <Route path='/signup' element={<Signup/>}/>
                 <Route path='/success' element={<Success/>}/>
-                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser}/>}/>
+                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
             </Routes>
         </main>
 

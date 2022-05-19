@@ -7,6 +7,7 @@ const UserPage = (props) =>{
     let {id} = useParams()
     let users = props.user
     let user = users.find(u => u._id === id)
+
     const[editForm, setEditForm] = useState(user)
 
     const handleChange = event =>{
@@ -17,6 +18,11 @@ const UserPage = (props) =>{
         event.preventDefault()
         props.updatedUser(editForm, id)
         navigate(`/userpage/${id}`)
+    }
+
+    const deleteAccount = ()=>{
+        props.deleteUser(id)
+        navigate('/')
     }
 
     return(
@@ -60,8 +66,10 @@ const UserPage = (props) =>{
             </div>
             <form onSubmit={handleSubmit} className="editform">
                 <input onChange={handleChange} type="text" name="bio" placeholder="Edit About Me" value={editForm.bio}/>
-                <input type="submit" value="submit"/>
             </form>
+            <div className="delete">
+                <button onClick={deleteAccount}>Delete Account</button>
+            </div>
         </div>
         </>
    
