@@ -1,5 +1,4 @@
 import {useNavigate, useParams} from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify'
 import {useState} from 'react'
 import './User.css'
 
@@ -16,7 +15,7 @@ const UserPage = (props) =>{
     
     const handleSubmit = event =>{
         event.preventDefault()
-        props.updatedUser(editForm,id)
+        props.updatedUser(editForm, id)
         navigate(`/userpage/${id}`)
     }
 
@@ -60,11 +59,10 @@ const UserPage = (props) =>{
                 <img src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" alt="tom"/>
             </div>
             <form onSubmit={handleSubmit} className="editform">
-                <input onChange={handleChange} type="text" placeholder="Edit About Me" value={editForm.bio}/>
+                <input onChange={handleChange} type="text" name="bio" placeholder="Edit About Me" value={editForm.bio}/>
+                <input type="submit" value="submit"/>
             </form>
         </div>
-        {toast(`Hi ${user.firstName}`,{theme:'dark'})}
-        <ToastContainer/>
         </>
    
     )

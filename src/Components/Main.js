@@ -10,7 +10,6 @@ import UserPage from '../Pages/UserPage';
 function Main(props){
     const [film, setFilm] = useState(null);
     const [user ,setUser] =useState(null);
-    const [updateUser,setUpdateUser] = useState(null)
     const [review,setReview] = useState({
         reviews:[{review:'Wow I really loved this film a lot!'}]
     })
@@ -31,7 +30,7 @@ function Main(props){
     const getUsers = () => {
         fetch(URL2)
         .then(response => response.json())
-        .then(result => setUpdateUser(result))
+        .then(result => setUser(result))
     }
 
     useEffect(() => {
@@ -64,15 +63,6 @@ function Main(props){
     useEffect(() => reviewData(),[])
     useEffect(() => getUsers(),[])
 
-    useEffect(() => {
-        const getUser = async () => {
-            const response = await fetch('https://backend-studioghibli-app.herokuapp.com/users/');
-            const data = await response.json();
-            setUser(data);
-        };
-        getUser();
-    }, []);
-
     const updatedUser = async (user, id) => {
         await fetch(URL2 + id, {
             method: "put",
@@ -96,7 +86,7 @@ function Main(props){
                 <Route exact path='/login' element={<Login />}/>
                 <Route path='/signup' element={<Signup/>}/>
                 <Route path='/success' element={<Success/>}/>
-                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser} updateUser={updateUser}/>}/>
+                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser}/>}/>
             </Routes>
         </main>
 
