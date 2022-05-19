@@ -25,7 +25,7 @@ const Success = () =>{
     },[cookie,navigate,removeCookie])
     return(
         <>
-            <h1 className="successful">Signup was Successful!</h1>
+            <h1 className="successful">Sign up was Successful!</h1>
             <ToastContainer/>
         </>
     )
