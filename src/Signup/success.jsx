@@ -27,6 +27,7 @@ const Success = () =>{
         <>
             <h1 className="successful">Sign up was Successful!</h1>
 
+            <ToastContainer/>
         </>
     )
 }

@@ -66,7 +66,7 @@ function Main(props){
     useEffect(() => getUsers(),[])
 
     const updatedUser = async (user, id) => {
-        await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
+        await fetch('http://localhost:4000/userpage/' + id, {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -84,6 +84,16 @@ function Main(props){
         getUsers()
     }
 
+    const addForm = async (user, id) => {
+        await fetch('http://localhost:4000/userpage/' + id, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+    }
+
 
     return(
         <main>
@@ -96,7 +106,7 @@ function Main(props){
                 <Route exact path='/login' element={<Login />}/>
                 <Route path='/signup' element={<Signup/>}/>
                 <Route path='/success' element={<Success/>}/>
-                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser}/>}/>
+                <Route path ='/userpage/:id' element={<UserPage user={user} updatedUser={updatedUser} deleteUser={deleteUser} addForm={addForm}/>}/>
             </Routes>
         </main>
 
