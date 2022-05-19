@@ -28,7 +28,8 @@ body{
    text-decoration: none;
    font-size: 20px;
    background-color: #61a09a;
-   border:#47807a solid 11px
+   border:#47807a solid 11px;
+   box-shadow: inset 5px 5px 10px 5px #18A999, 5px 5px 20px 5px #18A999;
   }
   
   .navbar a{
@@ -85,5 +86,3 @@ body{
   #logout{
     float: right;
   }
-
-

@@ -12,14 +12,16 @@
 
 .title{
     position: relative;
-    background-color: #EEDA9E;
+    background-color: #17a289;
     bottom:30vh;
     height: 10vh;
     font-size: 3rem;
     grid-area: image;
     right:4vh;
-    color: white;
-    
+    color: blanchedalmond;
+    font-family: 'Patrick Hand', cursive;
+    text-align:center;
+    text-shadow: 2px 2px #ff0000;
 
 }
 
@@ -30,8 +32,9 @@
 }
 
 .middle-container{
-    background-color: white;
+    background-color: #366862;
     color: black;
+    border: #17a289 double 15px;
 }
 
 .description-grid{
@@ -41,14 +44,13 @@
     grid-template-areas: 
     'image space space'
     'image body body'
-    'image details rating'
-    ;
+    'image details rating';
     margin: 50px;
 }
 
 .director{
     grid-area: space;
-    padding-left: 50px;
+    padding-left: 50px;color:blanchedalmond
 }
 
 .film-image{
@@ -59,23 +61,35 @@
 }
 
 .film-description{
+    font-family: 'Patrick Hand', cursive;
     grid-area: body;
-    padding-left: 50px;
+    padding-left: 20px;
+    padding-right: 60px;
+    color:blanchedalmond
 }
 
 .detail-description{
     grid-area: details;
+    font-family: 'Patrick Hand', cursive;
     padding-left: 50px;
+    color:blanchedalmond
 }
 
 .rating{
     grid-area: rating;
+    text-align:center;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 35px;
+    color: blanchedalmond;
+    
     
 }
 
 .review{
     text-align: center;
     color: white;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 15px
 }
 
 #reviewsubmit{
