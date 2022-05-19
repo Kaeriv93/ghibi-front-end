@@ -5,7 +5,7 @@
     box-shadow: -5px -5px 10px 5px #b5ca96, 5px 5px 20px 5px #b5ca96;
     }
   .flex{
-    display: inline-flex;
+      display: inline-flex;
     padding-top: 20px;
   }  
     
@@ -21,7 +21,6 @@
 
 
 .card-inner{
-    border:black solid 1px;
     position:relative; 
     width: 100%; 
       height: 100%; 
@@ -65,12 +64,14 @@
     background-color: #6EB49D;
     color: white;
     transform: rotateY(180deg);
-    font-size: 5px;
+    font-size: 8px;
     overflow-y:hidden;
     position:fixed ;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     margin-top: -220px;
+    padding: 9px;
+    
 
 }
 .card-back a{
@@ -85,35 +86,25 @@
     animation-duration:20s;
  
  }
- @keyframes run  {
-    0% {
-       left:0;
-       -webkit-transform:rotateY(0deg);
-    }
-    
-    50% {
-       left:82%;
-       -webkit-transform:rotateY(0deg);
-    }
-    
-    51% {
-       -webkit-transform:rotateY(180deg);
-    }
-    
-    99% {
-       left:0;
-       -webkit-transform:rotateY(180deg);
-    }
-    
-    100% {
-       left:0;
-       -webkit-transform:rotateY(0deg);
-    }
  
- }
 
 .footer{
     color: white;
     padding-left: 50px;
 }
- 
+.suggested-div{
+    display:flex;
+    justify-content: center;
+    padding-bottom: 20px
+}
+.suggested{
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    color: blanchedalmond;
+    border:#47807a solid 11px;
+    border-radius: 30%;
+    padding:7px;
+    background-color: #6EB49D;
+    box-shadow: -5px -5px 10px 5px #6EB49D, 5px 5px 20px 5px #F6AE2D;
+  
+}

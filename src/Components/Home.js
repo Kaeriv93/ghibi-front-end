@@ -1,10 +1,18 @@
 import '../styles/home.css'
 import {Link} from 'react-router-dom'
 import '../styles/App.css'
+import Carousel from './carousel';
 
 function List(props) {
-
-
+  const caro=()=>{
+    return (
+      <div>
+        <div className='suggested-div'> <h1 className="suggested">Suggested Films</h1></div>
+        
+        <Carousel/>
+      </div>
+    );
+  }
   const loaded = () => {
     return props.film.map((film,idx) => ( 
       <div className='flex'>
@@ -25,8 +33,16 @@ function List(props) {
     </div>
     </div>
     ));
-  };
-  return props.film ? loaded() : <h1>Loading.......</h1>;
+  }; 
+  caro();
+  return props.film ? (
+    <>
+    {caro()}
+    {loaded()}
+    </>
+  ):<h1>Loading.....</h1>
+
 }
+
 
 export default List
