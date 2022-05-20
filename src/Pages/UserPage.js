@@ -55,11 +55,6 @@ const UserPage = (props) =>{
         navigate('/')
     }
 
-    const addForm =()=>{
-        props.addForm(fav,id)
-        navigate(`/userpage/${id}`)
-    }
-
     return(
         <>
         <div className="profile">
@@ -86,6 +81,9 @@ const UserPage = (props) =>{
             <div className="hobbies">
                 <h3>Hobbies:</h3>
                 <h3>{user.hobbies}</h3>
+            <form onSubmit={handleSubmit} className="editform">
+                <input onChange={handleChange} type="text" name="hobbies" placeholder="Add a review!" value={editForm.hobbies}/>
+            </form>
             </div>
 
             <div className="favorites">
@@ -100,6 +98,9 @@ const UserPage = (props) =>{
             <div className="reviews">
                 <h3>Reviews:</h3>
                 <h4>{user.reviews}</h4>
+            <form onSubmit={handleSubmit} className="editform">
+                <input onChange={handleChange} type="text" name="reviews" placeholder="Add a review!" value={editForm.reviews}/>
+            </form>
             </div>
 
             <div className="friends">
