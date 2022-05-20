@@ -31,19 +31,20 @@ const FilmPage = (props)=>{
             <div className="middle-container">
                 <div className="description-grid">
                     <h1 className="title">{film.title}</h1>
-                    <h3 className="director">Directed by <b>{film.director}</b></h3>
+                    <h3 className="director">Directed by <br/>{film.director}</h3>
                     <hr/>
                     <img className="film-image" src={film.image} alt={film.title}/>
                     <div className="film-description">
                         <h3>Description</h3>
                         <p>{film.description}</p>
                     </div>
-                    <ul className="detail-description">
-                        <li>Year of Production:{film.release_date}</li>
-                        <li>Runtime:{film.running_time}mins</li>
-                        <li>Producer:{film.producer}</li>
-                    </ul>
-                    <h3 className="rating">Rating:{film.rt_score}</h3>
+                    <div className="detail-description">
+                        <h1>Year of Production: <br/> {film.release_date}</h1>
+
+                        <h1>Runtime: <br/> {film.running_time}mins</h1>
+                        <h1>Producer:<br/> {film.producer}</h1>
+                    </div>
+                    <h3 className="rating">Rating:<br/>{film.rt_score}</h3>
                 </div>
             </div>
             <div className="review">
@@ -55,7 +56,7 @@ const FilmPage = (props)=>{
                     </div>
                     <section className="review-section">
                         <form onSubmit={handleSubmit} autocomplete="off">
-                            <input type='text' value={newForm.content} name='content' placeholder='Leave a review' onChange={handleChange}/>
+                            <input id="form" type='text' value={newForm.content} name='content' placeholder='Leave a review' onChange={handleChange}/>
                             <input id="reviewsubmit" type='submit' value='Submit'/>
                         </form>
                     </section>

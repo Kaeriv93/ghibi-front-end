@@ -13,6 +13,13 @@ function List(props) {
       </div>
     );
   }
+  const title=()=>{
+    return (
+      <div>
+        <div className='suggested-div1'> <h1 className="suggested"> Studio Ghibli Movies</h1></div>
+      </div>
+    );
+  }
   const loaded = () => {
     return props.film.map((film,idx) => ( 
       <div className='flex'>
@@ -38,6 +45,7 @@ function List(props) {
   return props.film ? (
     <>
     {caro()}
+    {title()}
     {loaded()}
     </>
   ):<h1>Loading.....</h1>
