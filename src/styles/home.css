@@ -4,13 +4,18 @@
     border: #799b10 solid  4px;
     box-shadow: -5px -5px 10px 5px #b5ca96, 5px 5px 20px 5px #b5ca96;
     }
+
   .flex{
       display: inline-flex;
-    padding-top: 20px;
+      background-color: #093A3E;
+      border: 10px #093A3E solid;
+    padding-top: 10px;
+    box-shadow:  5px 5px 10px 5px #b5ca96, 5px 5px 20px 5px #b5ca96;
+  
+    
   }  
     
 .flip-card{
-     
     display: inline-flex;
     padding: 5px;
     background-color: #4b967d;
@@ -53,7 +58,7 @@
    
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-   box-shadow: -5px -5px 10px 5px #758E4F, 5px 5px 20px 5px #F6AE2D;
+   box-shadow: -5px -5px 10px 5px #8ebb4a, 5px 5px 20px 5px #2aabb7;
 }
 .card-front a{
     color: white;
@@ -71,7 +76,7 @@
     backface-visibility: hidden;
     margin-top: -220px;
     padding: 9px;
-    
+    font-family: 'Patrick Hand', cursive;
 
 }
 .card-back a{
@@ -105,6 +110,13 @@
     border-radius: 30%;
     padding:7px;
     background-color: #6EB49D;
-    box-shadow: -5px -5px 10px 5px #6EB49D, 5px 5px 20px 5px #F6AE2D;
+    box-shadow: -5px -5px 10px 5px #6EB49D, 5px 5px 20px 5px #70ca2c;
   
+}
+
+.suggested-div1{
+    display:flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 30px
 }
