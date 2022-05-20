@@ -55,5 +55,3 @@ const Header = (props) =>{
 }
 
 export default Header
-
-/* kiki https://i.pinimg.com/originals/be/33/5f/be335fd0dc86f5fda4c98e057a5e322f.gif/ */
