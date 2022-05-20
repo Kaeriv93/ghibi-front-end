@@ -1,8 +1,9 @@
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import './Pages.css'
 
 const FilmPage = (props)=>{
+    const navigate = useNavigate()
     let {id} = useParams()
     let film = props.film[id]
     let review = props.review
@@ -20,6 +21,7 @@ const FilmPage = (props)=>{
         setNewForm({
             content:''
         })
+        navigate(`/${id}`)
     }
 
     return 1 > 0? (

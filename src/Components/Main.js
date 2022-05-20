@@ -66,7 +66,7 @@ function Main(props){
     useEffect(() => getUsers(),[])
 
     const updatedUser = async (user, id) => {
-        await fetch('http://localhost:4000/userpage/' + id, {
+        await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +85,7 @@ function Main(props){
     }
 
     const addForm = async (user, id) => {
-        await fetch('http://localhost:4000/userpage/' + id, {
+        await fetch('https://backend-studioghibli-app.herokuapp.com/userpage/' + id, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
