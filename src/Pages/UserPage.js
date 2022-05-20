@@ -66,33 +66,28 @@ const UserPage = (props) =>{
             </div>
 
             <div className="user-title">
-                <h1>Welcome to my page I'm <u><em>{user.username}</em></u></h1>
+                <h1>Welcome to my page I'm <u>{user.username}</u></h1>
                 <h3>Feel free to add me and connect!</h3>
             </div>
 
             <div className="bio">
-                <h3> <em><u>{user.firstName} {user.lastName}</u></em></h3>
+                <h3>{user.firstName} {user.lastName}</h3>
                 <hr/>
-                <h3><em><u>About Me</u></em></h3>
+                <h3>About Me</h3>
                 <p>{user.bio}</p>
                 <hr/>
             </div>
             
             <div className="hobbies">
-                <h3><u>Hobbies:</u></h3>
-               
+                <h3>Hobbies:</h3>
                 <h3>{user.hobbies}</h3>
-
             <form onSubmit={handleSubmit} className="editform">
                 <input onChange={handleChange} type="text" name="hobbies" placeholder="Add a review!" value={editForm.hobbies}/>
             </form>
-
-                
-
             </div>
 
             <div className="favorites">
-                <h3><u>Favorites List</u></h3>
+                <h3>Favorites List</h3>
                 <h5>{user.favorites}</h5>
                     {mapfilm}
                 <form onSubmit={submitFilm}>
@@ -101,31 +96,20 @@ const UserPage = (props) =>{
             </div>
 
             <div className="reviews">
-
                 <h3>Reviews:</h3>
                 <h4>{user.reviews}</h4>
             <form onSubmit={handleSubmit} className="editform">
                 <input onChange={handleChange} type="text" name="reviews" placeholder="Add a review!" value={editForm.reviews}/>
-
-                <h3><u>Reviews:</u>{user.reviews}</h3>
-
+            </form>
             </div>
 
             <div className="friends">
-                <h3><u>Friends List</u></h3>
+                <h3>Friends List</h3>
                 <h4>Tom</h4>
-                <img className="tom" src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" alt="tom"/>
+                <img src="https://pbs.twimg.com/profile_images/1237550450/mstom.jpg" alt="tom"/>
             </div>
-
             <form onSubmit={handleSubmit} className="editform">
-
-
-            <form onSubmit={handleSubmit} className="editform">
-
-            <form onSubmit={addForm} className="editform">
-
                 <input onChange={handleChange} type="text" name="bio" placeholder="Edit About Me" value={editForm.bio}/>
-
             </form>
             <div className="delete">
                 <button onClick={deleteAccount}>Delete Account</button>
